@@ -1,17 +1,28 @@
+import numpy as np
+import functools
+import math
+import collections
+import scipy
+import fractions
 import itertools
 
 def solve():
-  s = input()
-  hoge = ['0095', '0190', '0285', '0380', '0475', '0570', '0665', '0760', '0855', '0950', '1045', '1140', '1235', '1330', '1425', '1520', '1615', '1710', '1805', '1900', '2019', '2114', '2209', '2304', '2399', '2494', '2589', '2684', '2779', '2874', '2969', '3064', '3159', '3254', '3349', '3444', '3539', '3634', '3729', '3824', '4038', '4133', '4228', '4323', '4418', '4513', '4608', '4703', '4798', '4893', '4988', '5083', '5178', '5273', '5368', '5463', '5558', '5653', '5748', '5843', '6057', '6152', '6247', '6342', '6437', '6532', '6627', '6722', '6817', '6912', '7007', '7102', '7197', '7292', '7387', '7482', '7577', '7672', '7767', '7862', '8076', '8171', '8266', '8361', '8456', '8551', '8646', '8741', '8836', '8931', '9026', '9121', '9216', '9311', '9406', '9501', '9596', '9691', '9786', '9881']
-  ind = []
-  for i in range(len(s)-3):
-    if s[i:i+4] in hoge:
-      ind.append(i+3)
-  s = s[::-1]
-  for i in range(len(ind)):
-    
+  n, m = map(int, input().split())
+  dokutu = [0]*m
+  turo = [[] for i in range(n)]
+  for i in range(m):
+    dokutu[i] = list(map(int, input().split()))
+    turo[dokutu[i][0]-1].append(dokutu[i][1])
+    turo[dokutu[i][1]-1].append(dokutu[i][0])
+  print(turo)
+  for i in range(n):
+    if len(turo[i]) == 0:
+      print("No")
+      exit()
+  check = [-1]*n
+  for i in range(n):
+    for j in range(len(turo[i]))
   return 0
-
  
 if __name__ == "__main__":
   solve()
