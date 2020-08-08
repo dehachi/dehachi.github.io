@@ -1,1 +1,7 @@
-https://tohomath78th.jimdofree.com/
+<html>
+  <head>
+  </head>
+  <body>
+    <p>Hello, World!</p>
+  </body>
+</html>
